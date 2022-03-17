@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import time
 import numpy as np
 from matplotlib import cm
+from FunzioniAPI import APIOpenMeteo
 
 
 class CreaGrafico:
@@ -25,47 +26,56 @@ class CreaGrafico:
         self.graficoData.tt.append(self.graficoData.txt[-1][:10])
 
 
-    def StampaGrafico(self, comando = ["temperatura"], figsize=(12,6), colorTheme="white"):
+    def StampaGrafico(self, comando = ["temperatura"], figsize=(12,6), colorTheme="white",mlw=1):
         fig, ax = plt.subplots(figsize=(12,6))
 
 
         #cancello il lato DX e Up del riquadro del grafico
-        right_side = ax.spines["right"]
-        right_side.set_visible(False)
-        top_side = ax.spines["top"]
-        top_side.set_visible(False)
+        ax.spines["right"].set_visible(False)
+        ax.spines["top"].set_visible(False)
+        ax.spines['bottom'].set_color(colorTheme)
+        ax.spines['left'].set_color(colorTheme)
+        ax.set_facecolor("gray")#<............................................................................
+
+
+        ax.tick_params(axis='x', colors=colorTheme)
+
+        [t.set_color(colorTheme) for t in ax.yaxis.get_ticklines()]
+        [t.set_color(colorTheme) for t in ax.yaxis.get_ticklabels()]
+
+        ax.xaxis.label.set_color(colorTheme)  # setting up X-axis label color to yellow
+        ax.yaxis.label.set_color(colorTheme)
 
         Y = self.DatiDalComando (comando[0])
 
-        plt.plot(self.graficoData.th, Y, lw=1, c=colorTheme)
-        plt.axvline(self.Xatt, c=colorTheme, lw=2)
+        plt.plot(self.graficoData.th, Y, lw=1*mlw, c=colorTheme)
+        plt.axvline(self.Xatt, c=colorTheme, lw=2*mlw)
         for xxt in self.graficoData.xt:
-            plt.axvline(xxt, c=colorTheme, lw=1, ls='--')
+            plt.axvline(xxt, c=colorTheme, lw=1*mlw, ls='--')
 
-        plt.xticks(self.graficoData.xt, self.graficoData.tt)
+        plt.xticks(self.graficoData.xt, self.graficoData.tt, c=colorTheme)
         plt.xlim(self.graficoData.th[0], self.graficoData.th[-1])
-
-
 
         #plt.savefig('test.png', transparent=True) < SALVA SENZA SFONDO
 
 
         if len(comando)!= 1:
             if "precipitazioni" in comando[1:]:
-                plt.plot(self.graficoData.th, self.graficoData.prec, lw=1,ls=':', c=colorTheme)
+                plt.plot(self.graficoData.th, self.graficoData.prec, lw=1*mlw,ls=':', c=colorTheme)
             if "Temperatura percepita" in comando[1:]:
-                plt.plot(self.graficoData.th, self.graficoData.Tperc, lw=1, ls=':', c=colorTheme)
+                plt.plot(self.graficoData.th, self.graficoData.Tperc, lw=1*mlw, ls=':', c=colorTheme)
             if "umidità relativa" in comando[1:]:
-                plt.plot(self.graficoData.th, self.graficoData.relHum, lw=1, ls=':', c=colorTheme)
+                plt.plot(self.graficoData.th, self.graficoData.relHum, lw=1*mlw, ls=':', c=colorTheme)
             if "vento a 10m dal suolo" in comando[1:]:
-                plt.plot(self.graficoData.th, self.graficoData.wind10, lw=1,ls=':', c=colorTheme)
+                plt.plot(self.graficoData.th, self.graficoData.wind10, lw=1*mlw,ls=':', c=colorTheme)
             if "radiazione solare diretta" in comando[1:]:
-                plt.plot(self.graficoData.th, self.graficoData.radSole, lw=1, ls=':', c=colorTheme)
+                plt.plot(self.graficoData.th, self.graficoData.radSole, lw=1*mlw, ls=':', c=colorTheme)
             if "temperatura del suolo" in comando[1:]:
-                plt.plot(self.graficoData.th, self.graficoData.tempSuolo, lw=1,ls=':', c=colorTheme)
+                plt.plot(self.graficoData.th, self.graficoData.tempSuolo, lw=1*mlw,ls=':', c=colorTheme)
             if "umidità del suolo" in comando[1:]:
-                plt.plot(self.graficoData.th, self.graficoData.humSuolo, lw=1,ls=':', c=colorTheme)
+                plt.plot(self.graficoData.th, self.graficoData.humSuolo, lw=1*mlw,ls=':', c=colorTheme)
 
+        self.plot = plt
         return plt
 
 
@@ -91,9 +101,14 @@ class CreaGrafico:
 
 
 if __name__ == '__main__':
+    Roma=APIOpenMeteo()
+    Roma.AggiungiPrecipitazioni()
+    Roma.AggiungiTemperaturaPercepita()
 
-    lati = 41.903
-    longi = 12.48
+    Roma.grafico=CreaGrafico( GraficoDafa =Roma)
+    Roma.grafico.CreaXTickers()
+    plt=Roma.grafico.StampaGrafico(colorTheme='black', comando = ["temperatura", "precipitazioni", "Temperatura percepita"], mlw=2)
+    plt.show()
 
 
 

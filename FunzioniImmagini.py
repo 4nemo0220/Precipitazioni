@@ -17,7 +17,7 @@ logger.setLevel(logging.DEBUG)
 
 ####InizioImport
 
-def CreaImmagineFinale(IinfoSfondo):
+def CreaImmagine(IinfoSfondo):
     L,H=IinfoSfondo.dimSfondo
 
     Ximm = 1470
@@ -82,12 +82,13 @@ def ScegliImmagineDiSfondo(met):
 
     return nomeImmagine
 
-def StampaCalendario(d, L,H, Ximm, Yimm):
+def StampaCalendario(d, L,H, Ximm, Yimm, giorniCal=[]):
     fnt = ImageFont.truetype('arial.ttf', 19)
     giorniSettimana =["L", "M", "M", "G", "V", "S", "D"]
     giorniSSettimana = [" Lunedì  ", " Martedì ", "Mercoledì", " Giovedì ", " Venerdì ", "  Sabato ", "Domenica "]
 
-    giorniCal=CreaArrayCalendario()
+    if len(giorniCal)==0:
+        giorniCal=CreaArrayCalendario()
     righe= (len(giorniCal)//7)+3
 
 

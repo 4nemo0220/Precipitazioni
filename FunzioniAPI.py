@@ -32,7 +32,7 @@ class APIOpenMeteo:
 
 
 
-    def __init__(self, (Lati,Longi), gF =7, gP=2):
+    def __init__(self, Lati=41.903,Longi=12.48, gF =7, gP=2):
         self.latitude   = Lati
         self.longitude  = Longi
         self.gFuturi    = gF
@@ -50,9 +50,9 @@ class APIOpenMeteo:
         data = requests.get(urlTime).json()
         text = requests.get(urlIso).json()
 
-        self.th  = data['hourly']['time'][:(24*self.gioPassati+24*self.gFuturi)]
-        self.txt = text['hourly']['time'][:(24*self.gioPassati+24*self.gFuturi)]
-        self.T  = data['hourly']['temperature_2m'][:(24*self.gioPassati+24*self.gFuturi)]
+        self.th  = data['hourly']['time'][:(24*(self.gioPassati+self.gFuturi))]
+        self.txt = text['hourly']['time'][:(24*(self.gioPassati+self.gFuturi))]
+        self.T  = data['hourly']['temperature_2m'][:(24*(self.gioPassati+self.gFuturi))]
 
 
     def AggiungiPrecipitazioni (self):
@@ -60,7 +60,7 @@ class APIOpenMeteo:
         urlTime = (
             f"https://api.open-meteo.com/v1/forecast?latitude={str(self.latitude)}&longitude={str(self.longitude)}&hourly=precipitation&daily=precipitation_sum&timeformat=unixtime&timezone=Europe%2FBerlin&past_days={str(self.gioPassati)}")
         data = requests.get(urlTime).json()
-        self.prec = data['hourly']['precipitation']
+        self.prec = data['hourly']['precipitation'][:(24*(self.gioPassati+self.gFuturi))]
         self.td = data['daily']['time']
         self.precCum = data['daily']['precipitation_sum']
 
@@ -69,42 +69,42 @@ class APIOpenMeteo:
         comando = "apparent_temperature"
         url = (f"https://api.open-meteo.com/v1/forecast?latitude={str(self.latitude)}&longitude={str(self.longitude)}&hourly={str(comando)}&past_days={str(self.gioPassati)}")
         data = requests.get(url).json()
-        self.Tperc = data['hourly']['apparent_temperature']
+        self.Tperc = data['hourly']['apparent_temperature'][:(24*(self.gioPassati+self.gFuturi))]
 
 
     def AggiungiTemperaturaRelHum(self):
         comando = "relativehumidity_2m"
         url = (f"https://api.open-meteo.com/v1/forecast?latitude={str(self.latitude)}&longitude={str(self.longitude)}&hourly={str(comando)}&past_days={str(self.gioPassati)}")
         data = requests.get(url).json()
-        self.relHum = data['hourly']['relativehumidity_2m']
+        self.relHum = data['hourly']['relativehumidity_2m'][:(24*(self.gioPassati+self.gFuturi))]
 
 
     def AggiungiVento(self):
         comando = "windspeed_10m"
         url = (f"https://api.open-meteo.com/v1/forecast?latitude={str(self.latitude)}&longitude={str(self.longitude)}&hourly={str(comando)}&past_days={str(self.gioPassati)}")
         data = requests.get(url).json()
-        self.wind10 = data['hourly']['windspeed_10m']
+        self.wind10 = data['hourly']['windspeed_10m'][:(24*(self.gioPassati+self.gFuturi))]
 
 
     def AggiungiRadSol(self):
         comando = "direct_radiation"
         url = (f"https://api.open-meteo.com/v1/forecast?latitude={str(self.latitude)}&longitude={str(self.longitude)}&hourly={str(comando)}&past_days={str(self.gioPassati)}")
         data = requests.get(url).json()
-        self.radSole = data['hourly']['direct_radiation']
+        self.radSole = data['hourly']['direct_radiation'][:(24*(self.gioPassati+self.gFuturi))]
 
 
     def AggiungiTempSuolo(self):
         comando = "soil_temperature_0cm"
         url = (f"https://api.open-meteo.com/v1/forecast?latitude={str(self.latitude)}&longitude={str(self.longitude)}&hourly={str(comando)}&past_days={str(self.gioPassati)}")
         data = requests.get(url).json()
-        self.tempSuolo = data['hourly']['soil_temperature_0cm']
+        self.tempSuolo = data['hourly']['soil_temperature_0cm'][:(24*(self.gioPassati+self.gFuturi))]
 
 
     def AggiungiUmidSuolo(self):
         comando = "soil_moisture_0_1cm"
         url = (f"https://api.open-meteo.com/v1/forecast?latitude={str(self.latitude)}&longitude={str(self.longitude)}&hourly={str(comando)}&past_days={str(self.gioPassati)}")
         data = requests.get(url).json()
-        self.humSuolo = data['hourly']['soil_moisture_0_1cm']
+        self.humSuolo = data['hourly']['soil_moisture_0_1cm'][:(24*(self.gioPassati+self.gFuturi))]
 
 
 if __name__ == '__main__':

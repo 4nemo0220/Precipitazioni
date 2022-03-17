@@ -22,26 +22,28 @@ class InfoSfondo:
         self.luogo=luogo
         self.largColonna=largColonna
         self.hCalend=hCalend
-        self.linea=int((largColonna/250)*40)
+        self.linea=int((largColonna/450)*40)
+
+    def VecchiaDef (self):
         
-        # self.strOra = "Ultimo aggiornato alle " + InfoOra()
-        # logger.debug(f"  il prog ha creato la stringa 'strOra' [{self.strOra}];")
-        # logger.info("  il prog ha creato la stringa 'strOra';")
-        #
-        # AggiornaStato(10)
-        #
-        # self.InfoMeteoRoma = InfoMeteo("https://www.ilmeteo.it/meteo/Roma+centro+Campo+Marzio?refresh_ce", "Casa")
-        # logger.debug(f"  il prog ha creato la stringa 'Roma' \n[--------------\n{self.InfoMeteoRoma}\n--------------];")
-        # logger.info("  il prog ha creato la stringa 'Roma';")
-        #
-        # self.CreaStringaTitoloRepubblica()
-        # self.CreaStringaTitoloRepubblicaMondo()
-        #
-        # self.CreaStringaTitoloCorriere()
-        # self.CreaStringaTitoloAnsa()
-        #
-        # self.CreaSTRINGONA()
-        #
+        self.strOra = "Ultimo aggiornato alle " + InfoOra()
+        logger.debug(f"  il prog ha creato la stringa 'strOra' [{self.strOra}];")
+        logger.info("  il prog ha creato la stringa 'strOra';")
+
+        AggiornaStato(10)
+
+        self.InfoMeteoRoma = InfoMeteo("Roma")
+        logger.debug(f"  il prog ha creato la stringa 'Roma' \n[--------------\n{self.InfoMeteoRoma}\n--------------];")
+        logger.info("  il prog ha creato la stringa 'Roma';")
+
+        self.CreaStringaTitoloRepubblica()
+        self.CreaStringaTitoloRepubblicaMondo()
+
+        self.CreaStringaTitoloCorriere()
+        self.CreaStringaTitoloAnsa()
+
+        self.CreaSTRINGONA()
+
 
     def SpezzaInrighe(self, stringhetta):
 

@@ -15,6 +15,7 @@ from PIL import Image, ImageDraw, ImageFont
 import time
 from bs4 import BeautifulSoup
 from requests import get
+import threading
 
 # IMPORTA MODULI PERSONALI
 from FunzioniStarting import *
@@ -24,32 +25,83 @@ from FunzioniSalvaSuFile import *
 from FunzioneInfoOra  import InfoOra
 from FunzioniIlMeteo  import InfoMeteo
 from FunzioniTitoliGiorali import TitoloRep, TitoloRepMondo, TitoloCor, TitoloAnsa
-import threading
+from FunzioniAPI import APIOpenMeteo
+from FunzioniGrafici import CreaGrafico
+from FunzioneSovrapponiImmagini import SovrapponiMeteo
+
 
 def PT1_scrIlMeteo():
     global IinfoSfondo
 
     IinfoSfondo.InfoMeteoRoma=InfoMeteo(luogo=IinfoSfondo.luogo)
+    #(infoLoc[1], infoLoc[3]) # ------> (Lati, Longi)
+
+    AggiornaStato(20)
 
     T1_secThreads = []
 
-    T1_secThreads.append(threading.Thread(target=PT1_ST1_ApriImg))
+    T1_secThreads.append(threading.Thread(target=PT1_ST0_ApriImg))
     T1_secThreads[0].start()
 
-    T1_secThreads.append(threading.Thread(target=PT1_ST2_ApriImg))
+    T1_secThreads.append(threading.Thread(target=PT1_ST1_ApiOpenMeteo))
     T1_secThreads[1].start()
 
-    for st in T1_secThreads:
-        st.join()
 
-    print("\n-----------------T1: ENDDDDDDDDDD")
+    T1_secThreads[0].join()
 
-def PT1_ST1_ApriImg():
-    immagine = CreaImmagineFinale (IinfoSfondo)
-    print("PT1_ST1: End")
+    AggiornaStato(50)
 
-def PT1_ST2_ApriImg():
-    print("PT1_ST2: End")
+    primaryThreads[2].join()
+    d = ImageDraw.Draw(IinfoSfondo.immagine)
+
+    d = StampaCalendario(
+        d,
+        L=IinfoSfondo.dimSfondo[0],
+        H=IinfoSfondo.dimSfondo[1],
+        Ximm=(IinfoSfondo.dimSfondo[0] - IinfoSfondo.largColonna),
+        Yimm=IinfoSfondo.hCalend,
+        giorniCal=IinfoSfondo.giorniCal
+    )
+
+
+    primaryThreads[1].join()
+
+
+    IinfoSfondo.CreaSTRINGONA()
+
+    fnt = ImageFont.truetype('arial.ttf', 19)
+    d.text(((IinfoSfondo.dimSfondo[0] - IinfoSfondo.largColonna), IinfoSfondo.hCalend),
+           IinfoSfondo.STRINGONA,
+           font=fnt, fill=(255, 255, 255))
+    logger.info("  il prog ha creato immagine da salvare;")
+
+
+    T1_secThreads[1].join()
+    AggiornaStato(90)
+
+    IinfoSfondo.immagine=SovrapponiMeteo(IinfoSfondo.immagine)
+    # print("\n-----------------T1: ENDDDDDDDDDD")
+
+
+def PT1_ST0_ApriImg():
+    global IinfoSfondo
+
+    IinfoSfondo.immagine = CreaImmagine (IinfoSfondo)
+
+def PT1_ST1_ApiOpenMeteo():
+
+    global IinfoSfondo
+
+    Roma = APIOpenMeteo( Lati=IinfoSfondo.InfoMeteoRoma[3][0], Longi=IinfoSfondo.InfoMeteoRoma[3][1], gF =3, gP=0)
+    Roma.AggiungiPrecipitazioni()
+    Roma.AggiungiTemperaturaPercepita()
+
+    ogGrfico=CreaGrafico(Roma)
+
+    ogGrfico.CreaXTickers()
+    IinfoSfondo.pltGrafico=ogGrfico.StampaGrafico( comando = ["temperatura", "precipitazioni", "Temperatura percepita"], mlw=2 )
+
+    IinfoSfondo.pltGrafico.savefig('grafico.png', transparent=True) #<------------------------------------------------------------------------------------------
 
 
 def PT2_scrQuotidiani():
@@ -77,26 +129,25 @@ def PT2_scrQuotidiani():
     secThreads.append(threading.Thread(target=IinfoSfondo.CreaStringaTitoloAnsa))
     secThreads[3].start()
 
-    for st in secThreads:
-        st.join()
+    for i in range(len(secThreads)):
+        secThreads[i].join()
+        # print("PT2_ST",i,": End", sep='')
 
 
-
-
-    print("\n-----------------T2: ENDDDDDDDDDD")
 
 def PT3_Calendario():
     global IinfoSfondo
+    IinfoSfondo.strOra=InfoOra()
     IinfoSfondo.giorniCal = CreaArrayCalendario()
 
-    print("\n-----------------T3: ENDDDDDDDDDD")
+
 
 if __name__ == '__main__':
     PrintaSwitcher(edizione)
 
     start=time.time()
 
-    IinfoSfondo = InfoSfondo( dimSfondo= (1920, 1080), luogo= "Roma", largColonna=450, hCalend=250)
+    IinfoSfondo = InfoSfondo( dimSfondo= (1920, 1080), luogo= "Roma centro Borgo", largColonna=550, hCalend=250)
     IinfoSfondo.path = 'C:/Users/coand/Google Drive/PC/Immagini/Switcher/'
 
     primaryThreads= []
@@ -107,35 +158,17 @@ if __name__ == '__main__':
     primaryThreads.append(threading.Thread(target = PT3_Calendario))
     primaryThreads[2].start()
 
-    for pt in primaryThreads:
-        pt.join()
+
+
+    primaryThreads[0].join()
+
+    SalvaECopia(IinfoSfondo.immagine, IinfoSfondo.path)
+    AggiornaStato(100)
+
+
+
 
     tempo=time.time()-start
-
-
-    # print(IinfoSfondo.InfoMeteoRoma[0])
-    # print(IinfoSfondo.repubblicaM)
-    # print("tempo:", tempo)
-
-
-
-     #
-    # InfMet = InfoMeteo("Belmonte in sabina")
-    # LatiLongi=InfMet[3] #latilongi
-    #
-    # #Printa su schermo le info per l'avvio del programma
-    # AggiornaStato(0)
-    #
-    # #Crea l'oggetto "IinfoSfondo" contenente tutte le info necessarie
-    # IinfoSfondo = InfoSfondo()
-    #
-    # AggiornaStato(50)
-    #
-    # #Crea l'immagine da salvare - con la funzione CreaImmagineFinale()
-    # #Salva l'immagine creata in duplice copia - con la funzione SalvaECopia()
-    # IinfoSfondo.path='C:/Users/coand/Google Drive/PC/Immagini/Switcher/'
-    # SalvaECopia(  CreaImmagineFinale(IinfoSfondo, dimSfondo)  , IinfoSfondo.path)
-    #
-    # AggiornaStato(100)
+    print("\nTempo:", tempo)
 
     exit(0)

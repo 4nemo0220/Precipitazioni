@@ -13,7 +13,7 @@ def PrintaByNik(edizione):
     print("      *  |_______\\ \\___| \\___||_||_||_____||_| |_||_____||_|\\_\\   |___|/_/   /_/   |___//_//_____/  *")
     print(f"       *                        Edizione {str(edizione)}          Eseguito alle { InfoOra()}                      *" )
     print("        * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  " )
-    print("        [","\u2591"*87,"]  ", sep='', end='')
+    AggiornaStato(0)
 
 
 def PrintaSwitcher(edizione):
@@ -25,14 +25,15 @@ def PrintaSwitcher(edizione):
     print("     *    _____\\\\ \\ \\| |\\ \\| || || |||____ / __  ///____ /   |   *")
     print   ("      *  |_______\\ \\___| \\___||_||_||____//_/ /_//_____//_/|_|  *")
 
-    print(f"       *         Edizione {str(edizione)}   Eseguito alle { InfoOra()}           *" )
+    print(f"       *         Edizione {str(edizione)}   Eseguito alle { InfoOra()}         *" )
     print("        * * * * * * * * * * * * * * * * * * * * * * * * * * * *" )
-    print("        [","\u2591"*87,"]  ", sep='', end='')
+    AggiornaStato(0)
 
 def AggiornaStato(x):
-    n=int(x*87/100)
+    lunghBarra=len("* * * * * * * * * * * * * * * * * * * * * * * * * * * *")-2
+    n=int(x*lunghBarra/100)
     print('',end='\r')
-    print("        ["+"\u2593"*n+"\u2591"*(87-n)+"]  ", end='')
+    print("        ["+"\u2593"*n+"\u2591"*(lunghBarra-n)+"]  ", end='')
 
 ####FineImport
 
