@@ -12,7 +12,7 @@ class APIOpenMeteo:
         self.txt:           array dei labels (in ore)
         self.tnow:          momento attuale in timeStamp
         self.T:             Temperatura  (ogni ora)
-        self.prec:          precipitazioni nel tempo        [funzione per aggiungere questo dato: AggiungiPrecipitazioni()       ]
+        self.prec:          precipitazioni                  [funzione per aggiungere questo dato: AggiungiPrecipitazioni()       ]
         self.precCum:       somma precipitazioni            [funzione per aggiungere questo dato: AggiungiPrecipitazioni()       ]
         self.Tperc:         Temperatura percepita           [funzione per aggiungere questo dato: AggiungiTemperaturaPercepita() ]
         self.relHum:        umidità relativa                [funzione per aggiungere questo dato: AggiungiTemperaturaRelHum()    ]
@@ -32,7 +32,7 @@ class APIOpenMeteo:
 
 
 
-    def __init__(self, Lati=41.903,Longi=12.48, gF =7, gP=2):
+    def __init__(self, (Lati,Longi), gF =7, gP=2):
         self.latitude   = Lati
         self.longitude  = Longi
         self.gFuturi    = gF
@@ -121,7 +121,6 @@ if __name__ == '__main__':
     Roma.AggiungiUmidSuolo ()
 
 
-
     plot = 0
 
     if plot == 1:
@@ -153,7 +152,7 @@ if __name__ == '__main__':
 
 
 
-    printAll=True
+    printAll=0
 
 
     if printAll == True:

@@ -3,7 +3,7 @@ import requests
 import time
 import io
 from FunzioniAPI import ArrTemperatura, ArrPrec
-from FunzioniGrafici import Grafico, GraficoConPrecipitazioni
+from FunzioniGrafici_VECCHIOMODULO import Grafico, GraficoConPrecipitazioni
 from PIL import Image
 
 def SovrapponiMeteo():

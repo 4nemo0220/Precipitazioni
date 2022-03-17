@@ -1,6 +1,9 @@
 from bs4 import BeautifulSoup
 from requests import get
 
+
+####InizioImport
+
 def TitoloRep():
     URL = 'https://www.repubblica.it/'
     gtml_text = get(URL).text
@@ -46,3 +49,5 @@ def TitoloAnsa():
 
     titolo = course_cards.text.replace("  ", "").replace("\n", "")
     return (titolo)
+
+####FineImport
