@@ -1,3 +1,5 @@
+import os
+
 edizione= "015"
 
 # IMPORTA E SETTA il LOGGER
@@ -97,6 +99,7 @@ def PT0_ST1_ApiOpenMeteo():
     IinfoSfondo.pltGrafico=ogGrfico.StampaGrafico( comando = ["temperatura", "precipitazioni", "Temperatura percepita"], mlw=2 )
 
     IinfoSfondo.pltGrafico.savefig('grafico.png', transparent=True) #<------------------------------------------------------------------------------------------
+    time.sleep(0.1)
 
 #PT1
 def PT1_scrQuotidiani():
@@ -171,6 +174,15 @@ if __name__ == '__main__':
     IinfoSfondo.immagine = SovrapponiMeteo(IinfoSfondo.immagine)
 
     SalvaECopia(IinfoSfondo.immagine, IinfoSfondo.path)
+    time.sleep(0.1)
+    AggiornaStato(99)
+
+    try:
+        os.remove('grafico.png')
+        time.sleep(0.1)
+
+    except:
+        print( "Rimozione non riuscita!")
     AggiornaStato(100)
 
 
