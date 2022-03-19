@@ -1,3 +1,5 @@
+import time
+
 from PIL import Image
 
 def SovrapponiMeteo(sfondo):
@@ -15,14 +17,32 @@ def SovrapponiMeteo(sfondo):
     #
     # path='C:/Users/coand/Google Drive/PC/Immagini/Switcher/'
     # sfondo= Image.open(path+'Live/sfondo1.png')
-    gr=Image.open('grafico.png')
 
-    size=600,300
-    gr.thumbnail(size, Image.ANTIALIAS)
+    try:
+        gr=Image.open('grafico.png')
+        size = 600, 300
+        gr.thumbnail(size, Image.ANTIALIAS)
 
-    sfondo.paste(gr, (1300, 700), gr)
-    sfondo
-    return sfondo#.save('sfondo1.png')
+        sfondo.paste(gr, (1300, 700), gr)
+        sfondo
+
+    except:
+        time.sleep(1)
+
+        try:
+            gr=Image.open('grafico.png')
+            size = 600, 300
+            gr.thumbnail(size, Image.ANTIALIAS)
+
+            sfondo.paste(gr, (1300, 700), gr)
+            sfondo
+
+        except:
+            print("Non ha proprio funzionato: FunzioneSovrapponiImmagini/SovrapponiMeteo.")
+
+
+
+    return sfondo
 
 
 

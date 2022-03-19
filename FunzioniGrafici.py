@@ -35,7 +35,7 @@ class CreaGrafico:
         ax.spines["top"].set_visible(False)
         ax.spines['bottom'].set_color(colorTheme)
         ax.spines['left'].set_color(colorTheme)
-        ax.set_facecolor("gray")#<............................................................................
+        #ax.set_facecolor("gray")#<............................................................................
 
 
         ax.tick_params(axis='x', colors=colorTheme)

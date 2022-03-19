@@ -29,8 +29,8 @@ from FunzioniAPI import APIOpenMeteo
 from FunzioniGrafici import CreaGrafico
 from FunzioneSovrapponiImmagini import SovrapponiMeteo
 
-
-def PT1_scrIlMeteo():
+#PT0
+def PT0_scrIlMeteo():
     global IinfoSfondo
 
     IinfoSfondo.InfoMeteoRoma=InfoMeteo(luogo=IinfoSfondo.luogo)
@@ -38,22 +38,19 @@ def PT1_scrIlMeteo():
 
     AggiornaStato(20)
 
-    T1_secThreads = []
+    PT0_ST = []
+    PT0_ST.append(threading.Thread(target=PT0_ST0_ApriImg))
+    PT0_ST[0].start() #PT0_ST0
+    PT0_ST.append(threading.Thread(target=PT0_ST1_ApiOpenMeteo))
+    PT0_ST[1].start() #PT0_ST1
 
-    T1_secThreads.append(threading.Thread(target=PT1_ST0_ApriImg))
-    T1_secThreads[0].start()
+    # JOIN PT0_ST0
+    PT0_ST[0].join()
 
-    T1_secThreads.append(threading.Thread(target=PT1_ST1_ApiOpenMeteo))
-    T1_secThreads[1].start()
+    # JOIN PT3
+    PT[2].join()
 
-
-    T1_secThreads[0].join()
-
-    AggiornaStato(50)
-
-    primaryThreads[2].join()
     d = ImageDraw.Draw(IinfoSfondo.immagine)
-
     d = StampaCalendario(
         d,
         L=IinfoSfondo.dimSfondo[0],
@@ -63,9 +60,8 @@ def PT1_scrIlMeteo():
         giorniCal=IinfoSfondo.giorniCal
     )
 
-
-    primaryThreads[1].join()
-
+    # JOIN PT2
+    PT[1].join()
 
     IinfoSfondo.CreaSTRINGONA()
 
@@ -75,20 +71,19 @@ def PT1_scrIlMeteo():
            font=fnt, fill=(255, 255, 255))
     logger.info("  il prog ha creato immagine da salvare;")
 
+    # JOIN PT0_ST1
+    PT0_ST[1].join()
 
-    T1_secThreads[1].join()
-    AggiornaStato(90)
-
-    IinfoSfondo.immagine=SovrapponiMeteo(IinfoSfondo.immagine)
     # print("\n-----------------T1: ENDDDDDDDDDD")
 
-
-def PT1_ST0_ApriImg():
+#PT0_ST0
+def PT0_ST0_ApriImg():
     global IinfoSfondo
 
     IinfoSfondo.immagine = CreaImmagine (IinfoSfondo)
 
-def PT1_ST1_ApiOpenMeteo():
+#PT0_ST1
+def PT0_ST1_ApiOpenMeteo():
 
     global IinfoSfondo
 
@@ -103,39 +98,39 @@ def PT1_ST1_ApiOpenMeteo():
 
     IinfoSfondo.pltGrafico.savefig('grafico.png', transparent=True) #<------------------------------------------------------------------------------------------
 
-
-def PT2_scrQuotidiani():
+#PT1
+def PT1_scrQuotidiani():
 
     global IinfoSfondo
 
 
-    secThreads = []
+    PT1_ST = []
 
     #IinfoSfondo.CreaStringaTitoloRepubblica()
-    secThreads.append(threading.Thread(target=IinfoSfondo.CreaStringaTitoloRepubblica))
-    secThreads[0].start()
+    PT1_ST.append(threading.Thread(target=IinfoSfondo.CreaStringaTitoloRepubblica))
+    PT1_ST[0].start()
 
 
     #IinfoSfondo.CreaStringaTitoloRepubblicaMondo()
-    secThreads.append(threading.Thread(target=IinfoSfondo.CreaStringaTitoloRepubblicaMondo))
-    secThreads[1].start()
+    PT1_ST.append(threading.Thread(target=IinfoSfondo.CreaStringaTitoloRepubblicaMondo))
+    PT1_ST[1].start()
 
 
     #IinfoSfondo.CreaStringaTitoloCorriere()
-    secThreads.append(threading.Thread(target=IinfoSfondo.CreaStringaTitoloCorriere))
-    secThreads[2].start()
+    PT1_ST.append(threading.Thread(target=IinfoSfondo.CreaStringaTitoloCorriere))
+    PT1_ST[2].start()
 
     #IinfoSfondo.CreaStringaTitoloAnsa()
-    secThreads.append(threading.Thread(target=IinfoSfondo.CreaStringaTitoloAnsa))
-    secThreads[3].start()
+    PT1_ST.append(threading.Thread(target=IinfoSfondo.CreaStringaTitoloAnsa))
+    PT1_ST[3].start()
 
-    for i in range(len(secThreads)):
-        secThreads[i].join()
+    for i in range(len(PT1_ST)):
+        PT1_ST[i].join()
         # print("PT2_ST",i,": End", sep='')
 
 
-
-def PT3_Calendario():
+#PT2
+def PT2_Calendario():
     global IinfoSfondo
     IinfoSfondo.strOra=InfoOra()
     IinfoSfondo.giorniCal = CreaArrayCalendario()
@@ -143,24 +138,37 @@ def PT3_Calendario():
 
 
 if __name__ == '__main__':
-    PrintaSwitcher(edizione)
 
+
+    PrintaSwitcher(edizione)
     start=time.time()
 
-    IinfoSfondo = InfoSfondo( dimSfondo= (1920, 1080), luogo= "Roma centro Borgo", largColonna=550, hCalend=250)
+    IinfoSfondo = InfoSfondo( dimSfondo= (1920, 1080),
+                              luogo= "Roma",
+                              largColonna=550,
+                              hCalend=250)
+
     IinfoSfondo.path = 'C:/Users/coand/Google Drive/PC/Immagini/Switcher/'
 
-    primaryThreads= []
-    primaryThreads.append(threading.Thread(target = PT1_scrIlMeteo))
-    primaryThreads[0].start()
-    primaryThreads.append(threading.Thread(target = PT2_scrQuotidiani))
-    primaryThreads[1].start()
-    primaryThreads.append(threading.Thread(target = PT3_Calendario))
-    primaryThreads[2].start()
+    PT= []
+    PT.append(threading.Thread(target = PT0_scrIlMeteo))
+    PT[0].start()
+    PT.append(threading.Thread(target = PT1_scrQuotidiani))
+    PT[1].start()
+    PT.append(threading.Thread(target = PT2_Calendario))
+    PT[2].start()
+
+    # all the work ...
+
+    # JOIN PT0
+    PT[0].join()
 
 
 
-    primaryThreads[0].join()
+
+    AggiornaStato(90)
+
+    IinfoSfondo.immagine = SovrapponiMeteo(IinfoSfondo.immagine)
 
     SalvaECopia(IinfoSfondo.immagine, IinfoSfondo.path)
     AggiornaStato(100)
