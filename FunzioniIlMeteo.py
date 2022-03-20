@@ -5,9 +5,9 @@ def AssicuraTesto( valore):
     if valore == None: valore="N.I."
     else: valore.text
 
-def InfoMeteo(luogo="Roma"):
+def InfoMeteo(luogo="Roma Centro Borgo"):
 
-    if luogo=="Roma":
+    if luogo=="Roma Centro Borgo":
         URL="https://www.ilmeteo.it/meteo/Roma%20centro%20Borgo"
     else:
 
@@ -105,6 +105,11 @@ def InfoMeteo(luogo="Roma"):
     stampa[1] = meteoF
     stampa[2] = tempF
     stampa[3] = (infoLoc[1], infoLoc[3]) # ------> (Lati, Longi)
+
+    if luogo=="Roma Centro Borgo":
+        stampa[3] = (41.9035, 12.48)
+
+
     return (stampa)
 
 # VECCHIA FUNZIONE

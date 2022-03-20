@@ -17,7 +17,7 @@ logger.setLevel(logging.DEBUG)  # Setto la soglia del logger a schermo su DEBUG
 ####InizioImport
 
 class InfoSfondo:
-    def __init__(self, dimSfondo= (1920, 1080), luogo= "Roma", largColonna=250, hCalend=500):
+    def __init__(self, dimSfondo= (1920, 1080), luogo= "Caltanissetta", largColonna=250, hCalend=500):
         self.dimSfondo=dimSfondo
         self.luogo=luogo
         self.largColonna=largColonna

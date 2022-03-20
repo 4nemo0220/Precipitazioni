@@ -89,7 +89,7 @@ def PT0_ST1_ApiOpenMeteo():
 
     global IinfoSfondo
 
-    Roma = APIOpenMeteo( Lati=IinfoSfondo.InfoMeteoRoma[3][0], Longi=IinfoSfondo.InfoMeteoRoma[3][1], gF =3, gP=0)
+    Roma = APIOpenMeteo( Lati=IinfoSfondo.InfoMeteoRoma[3][0], Longi=IinfoSfondo.InfoMeteoRoma[3][1], gF =3, gP=1)
     Roma.AggiungiPrecipitazioni()
     Roma.AggiungiTemperaturaPercepita()
 
@@ -147,7 +147,7 @@ if __name__ == '__main__':
     start=time.time()
 
     IinfoSfondo = InfoSfondo( dimSfondo= (1920, 1080),
-                              luogo= "Roma",
+                              luogo= "Roma Centro Borgo",
                               largColonna=550,
                               hCalend=250)
 
