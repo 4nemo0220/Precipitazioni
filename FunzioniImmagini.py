@@ -79,6 +79,11 @@ def ScegliImmagineDiSfondo(met):
         # img=Image.open(path+'fonti/pioggia.png')
         nomeImmagine=( 'fonti/copertoconIsolatePiogge.jpg')
 
+    elif (met.split()[0] == 'nubi' and met.split()[-1] == 'piogge'):
+        if __name__ == '__main__':print(f"Il meteoF[0] è -{met.split()[0]}- mentre meteoF[1] è -{met.split()[-1]}-")
+        # img=Image.open(path+'fonti/pioggia.png')
+        nomeImmagine=( 'fonti/copertoconIsolatePiogge.jpg')
+
     else:
         if __name__ == '__main__':print("Wewe!")
         if __name__ == '__main__':print(
