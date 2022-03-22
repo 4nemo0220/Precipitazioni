@@ -1,0 +1,21 @@
+Versione: 1
+Edizione: 8
+
+
+pyinstaller "C:\Users\coand\Google Drive\PC\Immagini\Switcher\py\prog007.py" --noconsole --onefile
+pyinstaller "C:\Users\coand\Google Drive\PC\Immagini\Switcher\py\prog013.py" --distpath "C:\Users\coand\Google Drive\PC\Immagini\Switcher\ExeCreati" --noconsole --onefile
+pyinstaller "C:\Users\coand\Google Drive\PC\Immagini\Switcher\py\prog014.py" --distpath "C:\Users\coand\Google Drive\PC\Immagini\Switcher\ExeCreati" --noconsole --onefile --windowed --icon="C:\Users\coand\Google Drive\PC\Immagini\Switcher\Icon\icons8-monitor-64.ico"
+
+pyinstaller "C:\Users\coand\Google Drive\PC\Immagini\Switcher\py\FilePy\XXXXX" --distpath "C:\Users\coand\Google Drive\PC\Immagini\Switcher\ExeCreati" --noconsole --onefile --windowed --icon="C:\Users\coand\Google Drive\PC\Immagini\Switcher\Icon\icons8-monitor-64.ico"
+
+
+Log creazione py
+nome prog.    	-------->   data creazioneSwticher_1_65	-------->	2022-03-13T18:20:46.638128
+Swticher_1_1	-------->	2022-03-13T18:21:04.188602
+Swticher_1_2	-------->	2022-03-16T12:28:05.879786
+Swticher_1_3	-------->	2022-03-16T12:32:03.222833
+Swticher_1_4	-------->	2022-03-16T12:32:17.402636
+Swticher_1_5	-------->	2022-03-16T12:36:33.156766
+Swticher_1_6	-------->	2022-03-19T11:35:20.050957
+Swticher_1_7	-------->	2022-03-20T10:40:44.643945
+Swticher_1_8	-------->	2022-03-20T17:32:30.663592
