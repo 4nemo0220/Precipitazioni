@@ -4,7 +4,7 @@
 block_cipher = None
 
 
-a = Analysis(['C:/Users/coand/Google Drive/PC/Immagini/Switcher/py/FunzioniVarie/MAIN.py'],
+a = Analysis(['C:/Users/coand/Google Drive/PC/Documenti/111 Programmazione/111PyCharm/Switcher/Precipitazioni/FunzioniVarie/MAIN.py'],
              pathex=[],
              binaries=[],
              datas=[],
@@ -37,4 +37,4 @@ exe = EXE(pyz,
           disable_windowed_traceback=False,
           target_arch=None,
           codesign_identity=None,
-          entitlements_file=None , icon='C:\\Users\\coand\\Google Drive\\PC\\Immagini\\Switcher\\fonti\\Icon\\icons8-monitor-64.ico')
+          entitlements_file=None , icon='C:\\Users\\coand\\Google Drive\\PC\\Documenti\\111 Programmazione\\111PyCharm\\Switcher\\Precipitazioni\\fonti\\Icon\\icons8-monitor-64.ico')

@@ -151,7 +151,7 @@ if __name__ == '__main__':
                               largColonna=550,
                               hCalend=250)
 
-    IinfoSfondo.path = 'C:/Users/coand/Google Drive/PC/Immagini/Switcher/'
+    IinfoSfondo.path = 'C:/Users/coand/Google Drive/PC/Immagini/Switcher/' #os.getcwd().split("FunzioniVarie")[0].replace("\\", "/")
 
     PT= []
     PT.append(threading.Thread(target = PT0_scrIlMeteo))

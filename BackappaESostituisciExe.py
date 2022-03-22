@@ -1,3 +1,14 @@
+###
+### Programma usato da nik per effettuare il backup dei vari file .py e per aggiornare il file.exe dentro la cartella Immagini
+###
+
+
+
+
+
+
+
+
 from datetime import datetime
 import os
 import shutil

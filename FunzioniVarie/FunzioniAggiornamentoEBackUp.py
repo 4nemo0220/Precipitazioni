@@ -166,4 +166,4 @@ def CancellaCartelleInutili():
 
 
 if __name__ == '__main__':
-    CancellaCartelleInutili()
+    print( os.getcwd().split("FunzioniVarie")[0].replace("\\", "/"))
