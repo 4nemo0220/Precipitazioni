@@ -1,6 +1,5 @@
 import os
-
-edizione= "015"
+edizione= "1_9"
 
 # IMPORTA E SETTA il LOGGER
 import logging
