@@ -34,27 +34,12 @@
    'C:\\Users\\coand\\Google '
    'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\__init__.py',
    'PYMODULE'),
-  ('packaging.specifiers',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\packaging\\specifiers.py',
-   'PYMODULE'),
-  ('typing',
-   'C:\\Users\\coand\\AppData\\Local\\Programs\\Python\\Python39\\lib\\typing.py',
-   'PYMODULE'),
-  ('contextlib',
-   'C:\\Users\\coand\\AppData\\Local\\Programs\\Python\\Python39\\lib\\contextlib.py',
-   'PYMODULE'),
-  ('packaging.__about__',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\packaging\\__about__.py',
-   'PYMODULE'),
-  ('packaging.utils',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\packaging\\utils.py',
-   'PYMODULE'),
   ('packaging._musllinux',
    'C:\\Users\\coand\\Google '
    'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\packaging\\_musllinux.py',
+   'PYMODULE'),
+  ('typing',
+   'C:\\Users\\coand\\AppData\\Local\\Programs\\Python\\Python39\\lib\\typing.py',
    'PYMODULE'),
   ('subprocess',
    'C:\\Users\\coand\\AppData\\Local\\Programs\\Python\\Python39\\lib\\subprocess.py',
@@ -67,6 +52,35 @@
    'PYMODULE'),
   ('struct',
    'C:\\Users\\coand\\AppData\\Local\\Programs\\Python\\Python39\\lib\\struct.py',
+   'PYMODULE'),
+  ('contextlib',
+   'C:\\Users\\coand\\AppData\\Local\\Programs\\Python\\Python39\\lib\\contextlib.py',
+   'PYMODULE'),
+  ('packaging._manylinux',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\packaging\\_manylinux.py',
+   'PYMODULE'),
+  ('ctypes',
+   'C:\\Users\\coand\\AppData\\Local\\Programs\\Python\\Python39\\lib\\ctypes\\__init__.py',
+   'PYMODULE'),
+  ('ctypes._endian',
+   'C:\\Users\\coand\\AppData\\Local\\Programs\\Python\\Python39\\lib\\ctypes\\_endian.py',
+   'PYMODULE'),
+  ('packaging.tags',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\packaging\\tags.py',
+   'PYMODULE'),
+  ('packaging._structures',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\packaging\\_structures.py',
+   'PYMODULE'),
+  ('packaging.utils',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\packaging\\utils.py',
+   'PYMODULE'),
+  ('packaging.__about__',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\packaging\\__about__.py',
    'PYMODULE'),
   ('packaging.markers',
    'C:\\Users\\coand\\Google '
@@ -318,47 +332,25 @@
    'C:\\Users\\coand\\Google '
    'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\packaging\\__init__.py',
    'PYMODULE'),
-  ('packaging.requirements',
+  ('packaging.specifiers',
    'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\packaging\\requirements.py',
-   'PYMODULE'),
-  ('packaging._manylinux',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\packaging\\_manylinux.py',
-   'PYMODULE'),
-  ('ctypes',
-   'C:\\Users\\coand\\AppData\\Local\\Programs\\Python\\Python39\\lib\\ctypes\\__init__.py',
-   'PYMODULE'),
-  ('ctypes._endian',
-   'C:\\Users\\coand\\AppData\\Local\\Programs\\Python\\Python39\\lib\\ctypes\\_endian.py',
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\packaging\\specifiers.py',
    'PYMODULE'),
   ('packaging.version',
    'C:\\Users\\coand\\Google '
    'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\packaging\\version.py',
    'PYMODULE'),
-  ('packaging._structures',
+  ('packaging.requirements',
    'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\packaging\\_structures.py',
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\packaging\\requirements.py',
    'PYMODULE'),
-  ('packaging.tags',
+  ('pkg_resources._vendor.packaging._typing',
    'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\packaging\\tags.py',
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_typing.py',
    'PYMODULE'),
-  ('pkg_resources._vendor',
+  ('pkg_resources._vendor.packaging.__about__',
    'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\__init__.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.markers',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\markers.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.appdirs',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\appdirs.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.specifiers',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\specifiers.py',
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__about__.py',
    'PYMODULE'),
   ('pkg_resources._vendor.pyparsing',
    'C:\\Users\\coand\\Google '
@@ -366,6 +358,18 @@
    'PYMODULE'),
   ('uuid',
    'C:\\Users\\coand\\AppData\\Local\\Programs\\Python\\Python39\\lib\\uuid.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\__init__.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.version',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\version.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.utils',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\utils.py',
    'PYMODULE'),
   ('pkg_resources._vendor.packaging.tags',
    'C:\\Users\\coand\\Google '
@@ -443,37 +447,33 @@
   ('distutils.errors',
    'C:\\Users\\coand\\AppData\\Local\\Programs\\Python\\Python39\\lib\\distutils\\errors.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.packaging.requirements',
+  ('pkg_resources._vendor.appdirs',
    'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\requirements.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.version',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\version.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging._structures',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_structures.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.__about__',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__about__.py',
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\appdirs.py',
    'PYMODULE'),
   ('pkg_resources._vendor.packaging',
    'C:\\Users\\coand\\Google '
    'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__init__.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.packaging.utils',
+  ('pkg_resources._vendor.packaging._structures',
    'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\utils.py',
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_structures.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.packaging._typing',
+  ('pkg_resources._vendor.packaging.markers',
    'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_typing.py',
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\markers.py',
    'PYMODULE'),
   ('pkg_resources._vendor.packaging._compat',
    'C:\\Users\\coand\\Google '
    'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_compat.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.specifiers',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\specifiers.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.requirements',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\requirements.py',
    'PYMODULE'),
   ('sysconfig',
    'C:\\Users\\coand\\AppData\\Local\\Programs\\Python\\Python39\\lib\\sysconfig.py',
@@ -824,11 +824,11 @@
   ('multiprocessing',
    'C:\\Users\\coand\\AppData\\Local\\Programs\\Python\\Python39\\lib\\multiprocessing\\__init__.py',
    'PYMODULE'),
-  ('tracemalloc',
-   'C:\\Users\\coand\\AppData\\Local\\Programs\\Python\\Python39\\lib\\tracemalloc.py',
-   'PYMODULE'),
   ('stringprep',
    'C:\\Users\\coand\\AppData\\Local\\Programs\\Python\\Python39\\lib\\stringprep.py',
+   'PYMODULE'),
+  ('tracemalloc',
+   'C:\\Users\\coand\\AppData\\Local\\Programs\\Python\\Python39\\lib\\tracemalloc.py',
    'PYMODULE'),
   ('_py_abc',
    'C:\\Users\\coand\\AppData\\Local\\Programs\\Python\\Python39\\lib\\_py_abc.py',
@@ -1186,61 +1186,57 @@
    'C:\\Users\\coand\\Google '
    'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\__init__.py',
    'PYMODULE'),
-  ('lxml.isoschematron',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\isoschematron\\__init__.py',
-   'PYMODULE'),
   ('lxml.html.soupparser',
    'C:\\Users\\coand\\Google '
    'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\html\\soupparser.py',
    'PYMODULE'),
-  ('lxml.html.defs',
+  ('lxml.includes.extlibs',
    'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\html\\defs.py',
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\includes\\extlibs\\__init__.py',
+   'PYMODULE'),
+  ('lxml.includes',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\includes\\__init__.py',
    'PYMODULE'),
   ('lxml.includes.libexslt',
    'C:\\Users\\coand\\Google '
    'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\includes\\libexslt\\__init__.py',
    'PYMODULE'),
-  ('lxml.usedoctest',
+  ('lxml.html._html5builder',
    'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\usedoctest.py',
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\html\\_html5builder.py',
    'PYMODULE'),
-  ('lxml.html._setmixin',
+  ('lxml.html.usedoctest',
    'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\html\\_setmixin.py',
-   'PYMODULE'),
-  ('lxml.pyclasslookup',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\pyclasslookup.py',
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\html\\usedoctest.py',
    'PYMODULE'),
   ('lxml.includes.libxslt',
    'C:\\Users\\coand\\Google '
    'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\includes\\libxslt\\__init__.py',
    'PYMODULE'),
-  ('lxml.html',
+  ('lxml.pyclasslookup',
    'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\html\\__init__.py',
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\pyclasslookup.py',
    'PYMODULE'),
-  ('lxml.html.html5parser',
+  ('lxml.usedoctest',
    'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\html\\html5parser.py',
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\usedoctest.py',
    'PYMODULE'),
-  ('lxml.html.builder',
+  ('lxml.html.formfill',
    'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\html\\builder.py',
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\html\\formfill.py',
    'PYMODULE'),
-  ('lxml.html._html5builder',
+  ('lxml.html.defs',
    'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\html\\_html5builder.py',
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\html\\defs.py',
+   'PYMODULE'),
+  ('lxml.ElementInclude',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\ElementInclude.py',
    'PYMODULE'),
   ('lxml.html._diffcommand',
    'C:\\Users\\coand\\Google '
    'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\html\\_diffcommand.py',
-   'PYMODULE'),
-  ('lxml.html.usedoctest',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\html\\usedoctest.py',
    'PYMODULE'),
   ('lxml.doctestcompare',
    'C:\\Users\\coand\\Google '
@@ -1248,6 +1244,10 @@
    'PYMODULE'),
   ('cgi',
    'C:\\Users\\coand\\AppData\\Local\\Programs\\Python\\Python39\\lib\\cgi.py',
+   'PYMODULE'),
+  ('lxml.html',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\html\\__init__.py',
    'PYMODULE'),
   ('lxml.cssselect',
    'C:\\Users\\coand\\Google '
@@ -1257,25 +1257,25 @@
    'C:\\Users\\coand\\Google '
    'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\includes\\libxml\\__init__.py',
    'PYMODULE'),
-  ('lxml.includes.extlibs',
+  ('lxml.isoschematron',
    'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\includes\\extlibs\\__init__.py',
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\isoschematron\\__init__.py',
+   'PYMODULE'),
+  ('lxml.html.builder',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\html\\builder.py',
+   'PYMODULE'),
+  ('lxml.html.html5parser',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\html\\html5parser.py',
+   'PYMODULE'),
+  ('lxml.html._setmixin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\html\\_setmixin.py',
    'PYMODULE'),
   ('lxml.html.ElementSoup',
    'C:\\Users\\coand\\Google '
    'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\html\\ElementSoup.py',
-   'PYMODULE'),
-  ('lxml.html.formfill',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\html\\formfill.py',
-   'PYMODULE'),
-  ('lxml.ElementInclude',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\ElementInclude.py',
-   'PYMODULE'),
-  ('lxml.includes',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\lxml\\includes\\__init__.py',
    'PYMODULE'),
   ('fontTools.misc.psCharStrings',
    'C:\\Users\\coand\\Google '
@@ -3338,101 +3338,21 @@
    'C:\\Users\\coand\\Google '
    'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\Image.py',
    'PYMODULE'),
-  ('PIL.DcxImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\DcxImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.WmfImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\WmfImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.PalmImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\PalmImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.FitsStubImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\FitsStubImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.MpoImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\MpoImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.McIdasImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\McIdasImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.Hdf5StubImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\Hdf5StubImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.GribStubImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\GribStubImagePlugin.py',
-   'PYMODULE'),
   ('PIL.ImImagePlugin',
    'C:\\Users\\coand\\Google '
    'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\ImImagePlugin.py',
    'PYMODULE'),
-  ('PIL.DdsImagePlugin',
+  ('PIL.PcdImagePlugin',
    'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\DdsImagePlugin.py',
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\PcdImagePlugin.py',
    'PYMODULE'),
-  ('PIL.IptcImagePlugin',
+  ('PIL.ImtImagePlugin',
    'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\IptcImagePlugin.py',
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\ImtImagePlugin.py',
    'PYMODULE'),
-  ('PIL.FliImagePlugin',
+  ('PIL.DcxImagePlugin',
    'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\FliImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.MicImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\MicImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.XpmImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\XpmImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.PcxImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\PcxImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.Jpeg2KImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\Jpeg2KImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.CurImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\CurImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.SgiImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\SgiImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.XVThumbImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\XVThumbImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.PsdImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\PsdImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.EpsImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\EpsImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.PixarImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\PixarImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.PdfImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\PdfImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.PdfParser',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\PdfParser.py',
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\DcxImagePlugin.py',
    'PYMODULE'),
   ('PIL.IcnsImagePlugin',
    'C:\\Users\\coand\\Google '
@@ -3442,53 +3362,25 @@
    'C:\\Users\\coand\\Google '
    'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\features.py',
    'PYMODULE'),
-  ('PIL.WebPImagePlugin',
+  ('PIL.PalmImagePlugin',
    'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\WebPImagePlugin.py',
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\PalmImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.McIdasImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\McIdasImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.IptcImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\IptcImagePlugin.py',
    'PYMODULE'),
   ('PIL.FpxImagePlugin',
    'C:\\Users\\coand\\Google '
    'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\FpxImagePlugin.py',
    'PYMODULE'),
-  ('PIL.FtexImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\FtexImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.XbmImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\XbmImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.PcdImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\PcdImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.SunImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\SunImagePlugin.py',
-   'PYMODULE'),
   ('PIL.MpegImagePlugin',
    'C:\\Users\\coand\\Google '
    'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\MpegImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.ImtImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\ImtImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.MspImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\MspImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.TgaImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\TgaImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.BufrStubImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\BufrStubImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.BlpImagePlugin',
-   'C:\\Users\\coand\\Google '
-   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\BlpImagePlugin.py',
    'PYMODULE'),
   ('PIL.GbrImagePlugin',
    'C:\\Users\\coand\\Google '
@@ -3498,9 +3390,117 @@
    'C:\\Users\\coand\\Google '
    'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\SpiderImagePlugin.py',
    'PYMODULE'),
+  ('PIL.DdsImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\DdsImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.CurImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\CurImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.EpsImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\EpsImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.FtexImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\FtexImagePlugin.py',
+   'PYMODULE'),
   ('PIL.IcoImagePlugin',
    'C:\\Users\\coand\\Google '
    'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\IcoImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.BlpImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\BlpImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.XbmImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\XbmImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.WebPImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\WebPImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.XpmImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\XpmImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.SunImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\SunImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.BufrStubImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\BufrStubImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.Hdf5StubImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\Hdf5StubImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.PdfImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\PdfImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.PdfParser',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\PdfParser.py',
+   'PYMODULE'),
+  ('PIL.PsdImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\PsdImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.GribStubImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\GribStubImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.FliImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\FliImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.FitsStubImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\FitsStubImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.MpoImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\MpoImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.TgaImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\TgaImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.XVThumbImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\XVThumbImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.MspImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\MspImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.SgiImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\SgiImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.PixarImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\PixarImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.MicImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\MicImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.WmfImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\WmfImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.Jpeg2KImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\Jpeg2KImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.PcxImagePlugin',
+   'C:\\Users\\coand\\Google '
+   'Drive\\PC\\Immagini\\Switcher\\Env\\lib\\site-packages\\PIL\\PcxImagePlugin.py',
    'PYMODULE'),
   ('PIL.TiffImagePlugin',
    'C:\\Users\\coand\\Google '
