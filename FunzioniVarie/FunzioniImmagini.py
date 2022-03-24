@@ -48,9 +48,13 @@ def ScegliImmagineDiSfondo(met):
             #if __name__ == '__main__':print(f"Il meteo è -{met}-")
             nomeImmagine=( 'fonti/coperto.jpg')
         elif met == 'pioggia':
+            # if __name__ == '__main__':print(f"Il meteo è -{met}-")
+            # img=Image.open(path+'fonti/pioggia.png')
+            nomeImmagine = ('fonti/pioggia.jpg')
+        elif met == 'serenissimo':
             #if __name__ == '__main__':print(f"Il meteo è -{met}-")
             # img=Image.open(path+'fonti/pioggia.png')
-            nomeImmagine=( 'fonti/pioggia.jpg')
+            nomeImmagine=( 'fonti/serenissimo.jpg')
         else:
             nomeImmagine=( 'fonti/question.jpg')
 
