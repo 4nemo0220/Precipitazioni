@@ -87,11 +87,18 @@ class InfoSfondo:
 
 
     def CreaSTRINGONA(self):
-        self.STRINGONA= self.strOra + "\n" + self.InfoMeteoRoma[0] + '\n' \
-                        +'\nilCorriere:\n'          + self.corriere \
-                        +'\n\nla Repubblica:\n'       + self.repubblica \
-                        +'\nla Repubblica Mondo:\n' + self.repubblicaM \
-                        +'\n\nAnsa:\n'                + self.ansa
+        self.STRINGONA = self.InfoMeteoRoma[0] + '\n' \
+                         + '\nilCorriere:\n' + self.corriere \
+                         + '\n\nla Repubblica:\n' + self.repubblica \
+                         + '\nla Repubblica Mondo:\n' + self.repubblicaM \
+                         + '\n\nAnsa:\n' + self.ansa
+
+        # Vecchia versione
+        # self.STRINGONA= self.strOra + "\n" + self.InfoMeteoRoma[0] + '\n' \
+        #                 +'\nilCorriere:\n'          + self.corriere \
+        #                 +'\n\nla Repubblica:\n'       + self.repubblica \
+        #                 +'\nla Repubblica Mondo:\n' + self.repubblicaM \
+        #                 +'\n\nAnsa:\n'                + self.ansa
 
 
 ####FineImport

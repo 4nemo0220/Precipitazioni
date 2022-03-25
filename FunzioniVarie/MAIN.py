@@ -37,6 +37,9 @@ def PT0_scrIlMeteo():
     IinfoSfondo.InfoMeteoRoma=InfoMeteo(luogo=IinfoSfondo.luogo)
     #(infoLoc[1], infoLoc[3]) # ------> (Lati, Longi)
 
+    global t0
+    t0=time.time()
+
     AggiornaStato(20)
 
     PT0_ST = []
@@ -47,9 +50,13 @@ def PT0_scrIlMeteo():
 
     # JOIN PT0_ST0
     PT0_ST[0].join()
+    global t1
+    t1= time.time()
 
     # JOIN PT3
     PT[2].join()
+    global t2
+    t2 = time.time()
 
     d = ImageDraw.Draw(IinfoSfondo.immagine)
     d = StampaCalendario(
@@ -61,8 +68,13 @@ def PT0_scrIlMeteo():
         giorniCal=IinfoSfondo.giorniCal
     )
 
+    global t6
+    t6 = time.time()
+
     # JOIN PT2
     PT[1].join()
+    global t3
+    t3= time.time()
 
     IinfoSfondo.CreaSTRINGONA()
 
@@ -74,6 +86,9 @@ def PT0_scrIlMeteo():
 
     # JOIN PT0_ST1
     PT0_ST[1].join()
+
+    global t4
+    t4 = time.time()
 
     # print("\n-----------------T1: ENDDDDDDDDDD")
 
@@ -143,7 +158,15 @@ if __name__ == '__main__':
 
 
     PrintaSwitcher(edizione)
+    t0 =0
+    t1 = 0
+    t2 = 0
+    t3 = 0
+    t4 = 0
+    t5 = 0
+    t6= 0
     start=time.time()
+
 
     IinfoSfondo = InfoSfondo( dimSfondo= (1920, 1080),
                               luogo= "Roma Centro Borgo",
@@ -165,6 +188,8 @@ if __name__ == '__main__':
     # JOIN PT0
     PT[0].join()
 
+    t5 = time.time()
+
 
 
 
@@ -173,7 +198,7 @@ if __name__ == '__main__':
     IinfoSfondo.immagine = SovrapponiMeteo(IinfoSfondo.immagine)
 
     SalvaECopia(IinfoSfondo.immagine, IinfoSfondo.path)
-    time.sleep(0.1)
+
     AggiornaStato(99)
 
     try:
@@ -186,8 +211,19 @@ if __name__ == '__main__':
 
 
 
+    fine= time.time()
+    tempoT=fine-start
+    print("\n                           Totale:  ", round(tempoT,4)," s", sep='')
 
-    tempo=time.time()-start
-    print("\nTempo:", tempo)
+    # t0 -= start
+    # t1 -= start
+    # t2 -= start
+    # t3 -= start
+    # t4 -= start
+    # t5 -= start
+    # t6 -= start
+    #
+    # print( round(t0,4) , round( t1,4) , round( t2,4), round( t6,4) , round( t3,4) , round( t4,4) , round( t5,4), sep='\t')
+    # print( round(t0,4) , round(t1 -t0,4) , round( t2 -t1,4) ,round( t6 -t2,4) , round( t3 -t6,4) , round( t4-t3,4) , round( t5-t4,4), sep='\t')
 
     exit(0)

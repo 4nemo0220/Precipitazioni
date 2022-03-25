@@ -1,5 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 from FunzioniStarting import PrintaByNik, AggiornaStato
+from FunzioneInfoOra import InfoOra
 import time
 
 # importing module for logging
@@ -125,8 +126,8 @@ def StampaCalendario(d, L,H, Ximm, Yimm, giorniCal=[]):
                     if data.tm_mon<10:
                         mese= '0'+str(data.tm_mon)+'/'
                     else: mese=str(data.tm_mon)+'/'
-                    epoch=giorniSSettimana[data.tm_wday]+' '+giorno+mese+str(data.tm_year)
-                    corrx = 26
+                    epoch= giorniSSettimana[data.tm_wday]+' '+giorno+mese+str(data.tm_year) +'  Agg: '+InfoOra()
+                    corrx = -40
                     corry = - 6
                     fnt = ImageFont.truetype('arial.ttf', 30)
                     d.text((X+corrx,Y+corry), epoch, font=fnt, fill=(255, 255, 255))
