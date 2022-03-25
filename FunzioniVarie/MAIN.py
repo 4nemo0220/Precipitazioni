@@ -215,15 +215,18 @@ if __name__ == '__main__':
     tempoT=fine-start
     print("\n                           Totale:  ", round(tempoT,4)," s", sep='')
 
-    # t0 -= start
-    # t1 -= start
-    # t2 -= start
-    # t3 -= start
-    # t4 -= start
-    # t5 -= start
-    # t6 -= start
-    #
-    # print( round(t0,4) , round( t1,4) , round( t2,4), round( t6,4) , round( t3,4) , round( t4,4) , round( t5,4), sep='\t')
-    # print( round(t0,4) , round(t1 -t0,4) , round( t2 -t1,4) ,round( t6 -t2,4) , round( t3 -t6,4) , round( t4-t3,4) , round( t5-t4,4), sep='\t')
+    t0 -= start
+    t1 -= start
+    t2 -= start
+    t3 -= start
+    t4 -= start
+    t5 -= start
+    t6 -= start
+
+    print("\n\nVersione BETA: analisi tempistiche per ottimizzazione temporale")
+    print("NomeVar:","t0   ","t1    ","t2    ","t6    ","t3    ","t4    ","t5    ", sep='\t' )
+    print( "Tempo Imp.", round(t0,4) , round( t1,4) , round( t2,4), round( t6,4) , round( t3,4) , round( t4,4) , round( t5,4), sep='\t')
+    print( "Diff. t(i)-t(i-1)" , round(t1 -t0,4) , round( t2 -t1,4),"" ,round( t6 -t2,4) , round( t3 -t6,4) , round( t4-t3,4) , round( t5-t4,4), sep='\t')
+    print("Devi ottimizzare il passaggio t2--->t6")
 
     exit(0)
