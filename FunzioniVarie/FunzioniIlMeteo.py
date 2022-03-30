@@ -180,7 +180,7 @@ def InfoMeteo(luogo="Roma Centro Borgo"):
     except:
         if __name__ == '__main__': print(
             "ERR: nell'attribuzione della variabile ora, assegno il valore '???'.")
-        oraR = "???"
+        oraR = "???x"
 
 
     # Meteo RADAR
