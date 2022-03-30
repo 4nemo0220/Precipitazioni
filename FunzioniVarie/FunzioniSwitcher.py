@@ -1,4 +1,4 @@
-from FunzioneInfoOra  import InfoOra
+from FunzioniInfoOra  import InfoOra
 from FunzioniIlMeteo  import InfoMeteo
 from FunzioniTitoliGiorali import TitoloRep, TitoloRepMondo, TitoloCor, TitoloAnsa
 from FunzioniStarting import PrintaByNik, AggiornaStato

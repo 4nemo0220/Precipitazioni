@@ -1,5 +1,5 @@
 Versione: 1
-Edizione: 12
+Edizione: 15
 
 
 pyinstaller "C:\Users\coand\Google Drive\PC\Immagini\Switcher\py\prog007.py" --noconsole --onefile
@@ -23,3 +23,5 @@ Swticher_1_9	-------->	2022-03-22T15:15:42.787108
 Swticher_1_10	-------->	2022-03-25T15:24:12.061638
 Swticher_1_11	-------->	2022-03-30T11:07:45.855352
 Swticher_1_12	-------->	2022-03-30T11:21:07.650140
+Swticher_1_14	-------->	2022-03-30T16:38:32.343416
+Swticher_1_15	-------->	2022-03-30T16:39:47.624400

@@ -1,6 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 from FunzioniStarting import PrintaByNik, AggiornaStato
-from FunzioneInfoOra import InfoOra
+from FunzioniInfoOra import InfoOra
 import time
 
 # importing module for logging
@@ -49,6 +49,10 @@ def ScegliImmagineDiSfondo(met):
             #if __name__ == '__main__':print(f"Il meteo è -{met}-")
             nomeImmagine=( 'fonti/coperto.jpg')
         elif met == 'pioggia':
+            # if __name__ == '__main__':print(f"Il meteo è -{met}-")
+            # img=Image.open(path+'fonti/pioggia.png')
+            nomeImmagine = ('fonti/pioggia.jpg')
+        elif met == 'temporale':
             # if __name__ == '__main__':print(f"Il meteo è -{met}-")
             # img=Image.open(path+'fonti/pioggia.png')
             nomeImmagine = ('fonti/pioggia.jpg')

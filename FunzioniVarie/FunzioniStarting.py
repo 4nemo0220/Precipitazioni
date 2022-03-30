@@ -1,4 +1,4 @@
-from FunzioneInfoOra  import InfoOra
+from FunzioniInfoOra  import InfoOra
 import time
 
 ####InizioImport
@@ -27,13 +27,14 @@ def PrintaSwitcher(edizione):
 
     print(f"       *         Edizione {str(edizione)}   Eseguito alle { InfoOra()}         *" )
     print("        * * * * * * * * * * * * * * * * * * * * * * * * * * * *" )
-    AggiornaStato(0)
+    AggiornaStato(0, "Starting")
 
-def AggiornaStato(x):
+def AggiornaStato(x, comando="Boh!"):
     lunghBarra=len("* * * * * * * * * * * * * * * * * * * * * * * * * * * *")-2
     n=int(x*lunghBarra/100)
     print('',end='\r')
-    print("        ["+"\u2593"*n+"\u2591"*(lunghBarra-n)+"]  ", end='')
+    if x<100: print("        ["+"\u2593"*n+"\u2591"*(lunghBarra-n)+"]  Step:",comando, end='')
+    else: print("        ["+"\u2593"*n+"\u2591"*(lunghBarra-n)+"]  ", end='')
 
 ####FineImport
 
