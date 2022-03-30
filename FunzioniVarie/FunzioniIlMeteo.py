@@ -61,10 +61,19 @@ def InfoMeteo(luogo="Roma Centro Borgo"):
     # Seleziono la riga del radar meteo
     try:
         rigaRadar = course_cards.find('tr', class_='situa2 radar-data riga-situazione-realtime')
+        if (rigaRadar)==None:
+            if __name__ == '__main__': print(
+                "ERR: nell'acquisizione della riga radar meteo. Passo all'acquisizione della riga metar.")
+
+            rigaRadar = course_cards.find('tr', class_='situa2 metar-dati riga-situazione-realtime')
+            if (rigaRadar) == None:
+                if __name__ == '__main__': print(
+                    "ERR: nell'acquisizione della riga metar. NON SO CHE FARE!.")
+
     except:
         if __name__ == '__main__':
             print(
-                "C'è stato un errore nell'identificare delle info dal radar del meteo. Procedo con i valori di default.")
+                "ERR: nell'identificare delle info dal radar del meteo. Procedo con i valori di default.")
         stampa[
             0] = "C'è stato un errore nell'identificare delle info dal radar del meteo. Procedo con i valori di default."
         stampa[1] = "serenissimo"
@@ -87,7 +96,7 @@ def InfoMeteo(luogo="Roma Centro Borgo"):
 
     except:
         if __name__ == '__main__': print(
-            "C'è stato un errore nell'identificazione delle previsioni meteo assegno la previsione 'serenxissimo'.")
+            "ERR: nell'identificazione delle previsioni meteo assegno la previsione 'serenxissimo'.")
         stampa[1] = "???"
 
     # TEMPERATURA FORECASTED
@@ -100,7 +109,7 @@ def InfoMeteo(luogo="Roma Centro Borgo"):
 
     except:
         if __name__ == '__main__': print(
-            "C'è stato un errore nell'identificazione della temperatura prevista, assegno la temperatura '???°'.")
+            "ERR: nell'identificazione della temperatura prevista, assegno la temperatura '???°'.")
         stampa[2] = "???°"
 
 
@@ -110,11 +119,11 @@ def InfoMeteo(luogo="Roma Centro Borgo"):
         oraF = course_cards.find('tr', class_='dark')
         oraF = oraF.find('td', class_='f').text
         if __name__ == '__main__':
-            print("oraF ---> La stringa sull'ora delle previsioni è: -", oraF, "-", sep='')
+            print("oraF      ---> La stringa sull'ora delle previsioni è: -", oraF, "-", sep='')
 
     except:
         if __name__ == '__main__': print(
-            "C'è stato un errore sull'ora delle previsioni, assegno il valore '???°'.")
+            "ERR: sull'ora delle previsioni, assegno il valore '???°'.")
         oraF = "???°"
 
 
@@ -125,11 +134,11 @@ def InfoMeteo(luogo="Roma Centro Borgo"):
         ventoF = ventoF.find('td', class_='col6')
         ventoF = ventoF.find('abbr', style='cursor:help').text
         if __name__ == '__main__':
-            print("ventoF ---> La stringa sul vento previsto è: -", ventoF, "-", sep='')
+            print("ventoF    ---> La stringa sul vento previsto è: -", ventoF, "-", sep='')
 
     except:
         if __name__ == '__main__': print(
-            "C'è stato un errore nell'identificazione del vento previsto, assegno li valore '???'.")
+            "ERR: nell'identificazione del vento previsto, assegno li valore '???'.")
         ventoF = "???"
 
 
@@ -139,11 +148,11 @@ def InfoMeteo(luogo="Roma Centro Borgo"):
         precF = course_cards.find('tr', class_='dark')
         precF = (precF.find('td', class_='col7').text).split()[1]
         if __name__ == '__main__':
-            print("precF ---> La stringa sulle precipitazioni previste (forecasted) è: -", precF, "-", sep='')
+            print("precF     ---> La stringa sulle precipitazioni previste (forecasted) è: -", precF, "-", sep='')
 
     except:
         if __name__ == '__main__': print(
-            "C'è stato un errore nell'identificazione delle precipitazioni, assegno il valore '???'.")
+            "ERR: nell'identificazione delle precipitazioni, assegno il valore '???'.")
         precF = "???"
 
     # UMIDITA' FORECASTED
@@ -152,11 +161,11 @@ def InfoMeteo(luogo="Roma Centro Borgo"):
         urF = course_cards.find('tr', class_='dark')
         urF = (urF.find('td', class_='col11').text).split('%')[0]+'%'
         if __name__ == '__main__':
-            print("urF ---> La stringa sul'umidità relativa prevista è: -", urF, "-", sep='')
+            print("urF       ---> La stringa sul'umidità relativa prevista è: -", urF, "-", sep='')
 
     except:
         if __name__ == '__main__': print(
-            "C'è stato un errore nell'identificazione dell'umità relavtiva, assegno l'umidità '???'.")
+            "ERR: nell'identificazione dell'umità relavtiva, assegno l'umidità '???'.")
         urF = "???"
 
 
@@ -167,10 +176,10 @@ def InfoMeteo(luogo="Roma Centro Borgo"):
     # Definizione ora attuale
     try:
         oraR = (rigaRadar.text).split()[0]
-        if __name__ == '__main__': print("oraR ---> la stringa sull'ora del radar è: -", oraR, "-", sep='')
+        if __name__ == '__main__': print("oraR      ---> la stringa sull'ora del radar è: -", oraR, "-", sep='')
     except:
         if __name__ == '__main__': print(
-            "C'è stato un errore nell'attribuzione della variabile ora, assegno il valore '???'.")
+            "ERR: nell'attribuzione della variabile ora, assegno il valore '???'.")
         oraR = "???"
 
 
@@ -178,9 +187,9 @@ def InfoMeteo(luogo="Roma Centro Borgo"):
     # Definizione delle pprevisioni (attuali)
     try:
         MeteoR = rigaRadar.find('td', class_='col3').text
-        if __name__ == '__main__': print("MeteoR ---> La stringa sul meteo attuale è: -", MeteoR, "-", sep='')
+        if __name__ == '__main__': print("MeteoR    ---> La stringa sul meteo attuale è: -", MeteoR, "-", sep='')
     except:
-        if __name__ == '__main__': print("C'è stato un errore nell'attribuzione del stringa sul meteo attuale, assegno il valore '???'.")
+        if __name__ == '__main__': print("ERR: nell'attribuzione del stringa sul meteo attuale, assegno il valore '???'.")
         MeteoR = "????"
 
 
@@ -196,7 +205,7 @@ def InfoMeteo(luogo="Roma Centro Borgo"):
         if __name__ == '__main__':
             print("stampa[3] ---> il touple con le info sulla pos è: -",stampa[3], "-", sep='')
     except:
-        if __name__ == '__main__': print("C'è stato un errore nell'attribuzione delle variabili latitudine e longitudine. Assegno quelle per roma.")
+        if __name__ == '__main__': print("ERR: nell'attribuzione delle variabili latitudine e longitudine. Assegno quelle per roma.")
         stampa[3] = (41.9035, 12.48)
 
 
@@ -204,9 +213,9 @@ def InfoMeteo(luogo="Roma Centro Borgo"):
     # Definizione delle precipitazioni (attuali)
     try:
         precR = rigaRadar.find('td', class_='col6').text
-        if __name__ == '__main__': print("precR ---> La stringa sulle precipitazioni attuali è: -", precR, "-", sep='')
+        if __name__ == '__main__': print("precR     ---> La stringa sulle precipitazioni attuali è: -", precR, "-", sep='')
     except:
-        if __name__ == '__main__': print("C'è stato un errore nell'attribuzione della definizione dello stato delle precipitazioni, assegno il valore '???'.")
+        if __name__ == '__main__': print("ERR: nell'attribuzione della definizione dello stato delle precipitazioni, assegno il valore '???'.")
         precR = "????"
 
 

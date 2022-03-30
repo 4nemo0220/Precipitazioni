@@ -72,7 +72,7 @@ class APIOpenMeteo:
         self.Tperc = data['hourly']['apparent_temperature'][:(24*(self.gioPassati+self.gFuturi))]
 
 
-    def AggiungiTemperaturaRelHum(self):
+    def AggiungiRelHum(self):
         comando = "relativehumidity_2m"
         url = (f"https://api.open-meteo.com/v1/forecast?latitude={str(self.latitude)}&longitude={str(self.longitude)}&hourly={str(comando)}&past_days={str(self.gioPassati)}")
         data = requests.get(url).json()

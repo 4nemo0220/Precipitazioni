@@ -3,6 +3,7 @@ import time
 from PIL import Image
 
 def SovrapponiMeteo(sfondo):
+    from PIL import Image, ImageDraw, ImageFont
 
 
 
@@ -24,21 +25,14 @@ def SovrapponiMeteo(sfondo):
         gr.thumbnail(size, Image.ANTIALIAS)
 
         sfondo.paste(gr, (1300, 700), gr)
-        sfondo
 
-    except:
-        time.sleep(1)
 
-        try:
-            gr=Image.open('grafico.png')
-            size = 600, 300
-            gr.thumbnail(size, Image.ANTIALIAS)
-
-            sfondo.paste(gr, (1300, 700), gr)
-            sfondo
-
-        except:
-            print("Non ha proprio funzionato: FunzioneSovrapponiImmagini/SovrapponiMeteo.")
+    except Exception as e:
+        print("Oops!", e.__class__, "occurred.")
+        errore=str(e.__class__)
+        d = ImageDraw.Draw(sfondo)
+        fnt = ImageFont.truetype('arial.ttf', 19)
+        d.text((1400, 800), "Non ha funzionato. ERR: "+errore, font=fnt, fill=(255, 255, 255))
 
 
 

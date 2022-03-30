@@ -92,6 +92,8 @@ def PT0_scrIlMeteo():
 
     # print("\n-----------------T1: ENDDDDDDDDDD")
 
+
+
 #PT0_ST0
 def PT0_ST0_ApriImg():
     global IinfoSfondo
@@ -106,6 +108,7 @@ def PT0_ST1_ApiOpenMeteo():
     Roma = APIOpenMeteo( Lati=IinfoSfondo.InfoMeteoRoma[3][0], Longi=IinfoSfondo.InfoMeteoRoma[3][1], gF =3, gP=1)
     Roma.AggiungiPrecipitazioni()
     Roma.AggiungiTemperaturaPercepita()
+    Roma.AggiungiRadSol()
 
     ogGrfico=CreaGrafico(Roma)
 
