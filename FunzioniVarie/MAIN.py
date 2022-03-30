@@ -29,7 +29,7 @@ from FunzioniTitoliGiorali import TitoloRep, TitoloRepMondo, TitoloCor, TitoloAn
 from FunzioniAPI import APIOpenMeteo
 from FunzioniGrafici import CreaGrafico
 from FunzioniSovrapponiImmagini import SovrapponiMeteo
-from FunzioniTimeOptimizzation import TimeOptimizzationClass
+from FunzioniOptimizzation import TimeOptimizzationClass
 
 #PT0
 def PT0_scrIlMeteo():
@@ -38,7 +38,7 @@ def PT0_scrIlMeteo():
     IinfoSfondo.InfoMeteoRoma=InfoMeteo(luogo=IinfoSfondo.luogo)
     #(infoLoc[1], infoLoc[3]) # ------> (Lati, Longi)
 
-    Tempi.Tic()
+    OggTempi.Tic()
 
     AggiornaStato(20)
 
@@ -50,11 +50,11 @@ def PT0_scrIlMeteo():
 
     # JOIN PT0_ST0
     PT0_ST[0].join()
-    Tempi.Tic()
+    OggTempi.Tic()
 
     # JOIN PT3
     PT[2].join()
-    Tempi.Tic()
+    OggTempi.Tic()
 
     d = ImageDraw.Draw(IinfoSfondo.immagine)
     d = StampaCalendario(
@@ -66,11 +66,11 @@ def PT0_scrIlMeteo():
         giorniCal=IinfoSfondo.giorniCal
     )
 
-    Tempi.Tic()
+    OggTempi.Tic()
 
     # JOIN PT2
     PT[1].join()
-    Tempi.Tic()
+    OggTempi.Tic()
 
     IinfoSfondo.CreaSTRINGONA()
 
@@ -83,7 +83,7 @@ def PT0_scrIlMeteo():
     # JOIN PT0_ST1
     PT0_ST[1].join()
 
-    Tempi.Tic()
+    OggTempi.Tic()
 
     # print("\n-----------------T1: ENDDDDDDDDDD")
 
@@ -151,10 +151,9 @@ def PT2_Calendario():
     IinfoSfondo.giorniCal = CreaArrayCalendario()
 
 
-Tempi=TimeOptimizzationClass()
+OggTempi=TimeOptimizzationClass()
 if __name__ == '__main__':
-
-
+    s=time.time()
     PrintaSwitcher(edizione)
 
     IinfoSfondo = InfoSfondo( dimSfondo= (1920, 1080),
@@ -177,7 +176,7 @@ if __name__ == '__main__':
     # JOIN PT0
     PT[0].join()
 
-    Tempi.Tic()
+    OggTempi.Tic("PT0Join")
 
 
 
@@ -186,20 +185,23 @@ if __name__ == '__main__':
 
     IinfoSfondo.immagine = SovrapponiMeteo(IinfoSfondo.immagine)
 
+    OggTempi.Tic("SovMete")
+
     SalvaECopia(IinfoSfondo.immagine, IinfoSfondo.path)
+    OggTempi.Tic("Sav&Cop")
 
     AggiornaStato(99)
 
     try:
         os.remove('grafico.png')
-        time.sleep(0.1)
 
     except:
         print( "Rimozione non riuscita!")
     AggiornaStato(100)
+    print("\n                       Tempo impiegato:", round(time.time()-s,2), "sec")
 
-    Tempi.Tic()
+    OggTempi.Tic("RemGraf")
 
-    Tempi.PrintaResoconto()
+    OggTempi.PrintaResoconto()
 
     exit(0)

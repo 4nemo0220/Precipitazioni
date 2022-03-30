@@ -32,7 +32,6 @@ def SalvaECopia(immagine, path):
     original = r'C:/Users/coand/Google Drive/PC/Immagini/Switcher/Live/sfondo1.png'
     target = r'C:/Users/coand/Google Drive/PC/Immagini/Switcher/Live/sfondo2.png'
     try:
-
         AggiornaStato(90)
         copyfile(original, target)
         logger.info("  il prog ha creato la copia del file 'sfondo1.png' denominandola 'sfondo1.png';")
