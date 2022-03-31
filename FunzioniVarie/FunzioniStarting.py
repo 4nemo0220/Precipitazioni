@@ -3,7 +3,7 @@ import time
 
 ####InizioImport
 
-def PrintaByNik(edizione):
+def PrintaByNik(edizione=0):
     print("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *" )
     print(" *  \\\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af|  _____________          _____                          ___     __             *")
     print("  *  \\\\\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af  |_____   _____|        | ____| ____    _    _    _    / | |   / /            *")
@@ -16,7 +16,7 @@ def PrintaByNik(edizione):
     AggiornaStato(0)
 
 
-def PrintaSwitcher(edizione):
+def PrintaSwitcher(edizione=0):
     print("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *" )
     print(" *  \\\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af|  _____________             _____          *")
     print("  *  \\\\\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af\u00af  |_____   _____|           / ____/ ____   *")
@@ -30,17 +30,33 @@ def PrintaSwitcher(edizione):
     AggiornaStato(0, "Starting")
 
 def AggiornaStato(x, comando="Boh!"):
-    lunghBarra=len("* * * * * * * * * * * * * * * * * * * * * * * * * * * *")-2
+    lunghBarra=len("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *")-2
     n=int(x*lunghBarra/100)
-    print('',end='\r')
-    if x<100: print("        ["+"\u2593"*n+"\u2591"*(lunghBarra-n)+"]  Step:",comando, end='')
-    else: print("        ["+"\u2593"*n+"\u2591"*(lunghBarra-n)+"]  ", end='')
+    stringaEvo="        ["+"\u2593"*n+"\u2591"*(lunghBarra-n)+"]        "
+    meta=int(len(stringaEvo)/2)
+    perc=str(x)+"%"
+    lperc=len(str(perc))
+    dlx=int(lperc)
 
+    stringaEvo = "        [" + "\u2593" * n + "\u2591" * (lunghBarra - n) + "]   Step:"
+
+    stringaEvo=stringaEvo[:(meta-dlx)]+perc+stringaEvo[(meta-dlx+lperc):]
+
+
+
+    print('',end='\r')
+    if x >= 100:
+        comando="Done"
+
+    print(stringaEvo, comando, end='')
+
+
+#TODO
 ####FineImport
 
 if __name__ == '__main__':
-    PrintaSwitcher(0)
+    PrintaByNik()
 
-    # for i in range (100):
-    #     AggiornaStato(i)
-    #     time.sleep(1)
+    for i in range (101):
+        AggiornaStato(i)
+        time.sleep(0.05)

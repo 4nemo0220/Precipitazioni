@@ -218,10 +218,10 @@ def InfoMeteo(luogo="Roma Centro Borgo"):
         if __name__ == '__main__': print("ERR: nell'attribuzione della definizione dello stato delle precipitazioni, assegno il valore '???'.")
         precR = "????"
 
+    stampa[0] =f'{luogo}: {stampa[1].upper()}\n'
+    if oraR != "???x": stampa[0] += f'({oraR}): {MeteoR} di {precR};\n({oraF}): {stampa[1]}, {stampa[2]}, {precF}, {ventoF} km/h, {urF};\n'
+    if oraF != "???":  stampa[0] += f'({oraF}): {stampa[1]}, {stampa[2]}, {precF}, {ventoF} km/h, {urF};'
 
-
-
-    stampa[0] =f'{luogo}: {stampa[1]}\n({oraR}): {MeteoR} di {precR};\n({oraF}): {stampa[1]}, {stampa[2]}, {precF}, {ventoF} km/h, {urF};'
     #                       meteoF
     return stampa
 

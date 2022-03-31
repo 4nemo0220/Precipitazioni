@@ -154,7 +154,7 @@ def PT2_Calendario():
 OggTempi=TimeOptimizzationClass()
 if __name__ == '__main__':
     s=time.time()
-    PrintaSwitcher(edizione)
+    PrintaByNik(edizione)
 
     IinfoSfondo = InfoSfondo( dimSfondo= (1920, 1080),
                               luogo= "Roma Centro Borgo",
@@ -198,9 +198,8 @@ if __name__ == '__main__':
     except:
         print( "Rimozione non riuscita!")
     AggiornaStato(100)
-    print("\n                       Tempo impiegato:", round(time.time()-s,2), "sec")
-
     OggTempi.Tic("RemGraf")
+    print("\n                      Tempo impiegato:", round(time.time()-s, 2), "sec")
 
     OggTempi.PrintaResoconto()
 
