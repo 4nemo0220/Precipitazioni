@@ -185,7 +185,7 @@ if __name__ == '__main__':
     AggiornaStato(68, "Sovrappongo Img")
 
 
-    time.sleep(4) # da togliere <------------------------------------------------------------------------------------------------------
+    # time.sleep(4) # da togliere <------------------------------------------------------------------------------------------------------
 
     IinfoSfondo.immagine = SovrapponiMeteo(IinfoSfondo.immagine)
 
@@ -195,9 +195,9 @@ if __name__ == '__main__':
     SalvaECopia(IinfoSfondo.immagine, IinfoSfondo.path)
 
     OggTempi.Tic("Sav&Cop")
-    AggiornaStato(97, "Attesa di 4 secondi prima della rimozione del file 'grafico.png'.")
+    AggiornaStato(97, "Rimozione del file 'grafico.png'.")
 
-    time.sleep(4) # da togliere <------------------------------------------------------------------------------------------------------
+    # time.sleep(4) # da togliere <------------------------------------------------------------------------------------------------------
 
     try:
         os.remove('grafico.png')
