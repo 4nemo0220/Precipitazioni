@@ -38,7 +38,8 @@ def PT0_scrIlMeteo():
     IinfoSfondo.InfoMeteoRoma=InfoMeteo(luogo=IinfoSfondo.luogo)
     #(infoLoc[1], infoLoc[3]) # ------> (Lati, Longi)
 
-    OggTempi.Tic()
+    OggTempi.Tic("ScrilMeteo")
+    AggiornaStato(1, "JoiPt0St0")
 
     AggiornaStato(20)
 
@@ -50,15 +51,18 @@ def PT0_scrIlMeteo():
 
     # JOIN PT0_ST0
     PT0_ST[0].join()
-    OggTempi.Tic()
+    OggTempi.Tic("JoiPt0St0")
+    AggiornaStato(21, "JoinPT2")
 
     # JOIN PT3
     PT[2].join()
-    OggTempi.Tic()
+    OggTempi.Tic("JoinPT2")
+    AggiornaStato(24, "StampaCalendario")
 
     d = ImageDraw.Draw(IinfoSfondo.immagine)
     d = StampaCalendario(
         d,
+        path = IinfoSfondo.path,
         L=IinfoSfondo.dimSfondo[0],
         H=IinfoSfondo.dimSfondo[1],
         Ximm=(IinfoSfondo.dimSfondo[0] - IinfoSfondo.largColonna),
@@ -66,11 +70,12 @@ def PT0_scrIlMeteo():
         giorniCal=IinfoSfondo.giorniCal
     )
 
-    OggTempi.Tic()
+    OggTempi.Tic("ScrCal")
+    AggiornaStato(60, "JoinPT1")
 
     # JOIN PT2
     PT[1].join()
-    OggTempi.Tic()
+    OggTempi.Tic("JoinPT1")
 
     IinfoSfondo.CreaSTRINGONA()
 
@@ -83,7 +88,7 @@ def PT0_scrIlMeteo():
     # JOIN PT0_ST1
     PT0_ST[1].join()
 
-    OggTempi.Tic()
+    OggTempi.Tic("JoiPt0St1")
 
     # print("\n-----------------T1: ENDDDDDDDDDD")
 
@@ -177,20 +182,22 @@ if __name__ == '__main__':
     PT[0].join()
 
     OggTempi.Tic("PT0Join")
+    AggiornaStato(68, "Sovrappongo Img")
 
 
-
-
-    AggiornaStato(90)
+    time.sleep(4) # da togliere <------------------------------------------------------------------------------------------------------
 
     IinfoSfondo.immagine = SovrapponiMeteo(IinfoSfondo.immagine)
 
     OggTempi.Tic("SovMete")
+    AggiornaStato(72, "Sav&Cop")
 
     SalvaECopia(IinfoSfondo.immagine, IinfoSfondo.path)
-    OggTempi.Tic("Sav&Cop")
 
-    AggiornaStato(99)
+    OggTempi.Tic("Sav&Cop")
+    AggiornaStato(97, "Attesa di 4 secondi prima della rimozione del file 'grafico.png'.")
+
+    time.sleep(4) # da togliere <------------------------------------------------------------------------------------------------------
 
     try:
         os.remove('grafico.png')

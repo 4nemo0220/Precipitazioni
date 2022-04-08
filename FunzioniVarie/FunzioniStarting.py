@@ -13,7 +13,7 @@ def PrintaByNik(edizione=0):
     print("      *  |_______\\ \\___| \\___||_||_||_____||_| |_||_____||_|\\_\\   |___|/_/   /_/   |___//_//_____/  *")
     print(f"       *                        Edizione {str(edizione)}          Eseguito alle { InfoOra()}                      *" )
     print("        * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  " )
-    AggiornaStato(0)
+    AggiornaStato(0, "Starting!")
 
 
 def PrintaSwitcher(edizione=0):
@@ -27,7 +27,7 @@ def PrintaSwitcher(edizione=0):
 
     print(f"       *         Edizione {str(edizione)}   Eseguito alle { InfoOra()}         *" )
     print("        * * * * * * * * * * * * * * * * * * * * * * * * * * * *" )
-    AggiornaStato(0, "Starting")
+    AggiornaStato(0, "Starting!")
 
 def AggiornaStato(x, comando="Boh!"):
     lunghBarra=len("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *")-2

@@ -106,24 +106,27 @@ def ScegliImmagineDiSfondo(met):
 
     return nomeImmagine
 
-def StampaCalendario(d, L,H, Ximm, Yimm, giorniCal=[]):
+def StampaCalendario(d, path, L, H, Ximm, Yimm, giorniCal=[]):
     fnt = ImageFont.truetype('arial.ttf', 19)
     giorniSettimana =["L", "M", "M", "G", "V", "S", "D"]
     giorniSSettimana = [" Lunedì  ", " Martedì ", "Mercoledì", " Giovedì ", " Venerdì ", "  Sabato ", "Domenica "]
 
     if len(giorniCal)==0:
         giorniCal=CreaArrayCalendario()
+
+    appuntamentiList=CreaListAppuntamenti(path)
+
     righe= (len(giorniCal)//7)+3
 
 
-    passoX= int((L - Ximm)/ 8)
+    passoX= int((L - Ximm)/ 11)
     passoY= int((Yimm)/ righe)
     day=0
 
 
     for i in range(righe-1):
         for j in range(7):
-            X=int(Ximm + (L - Ximm) * (j ) / 8) + int(passoX / 2)
+            X=int(Ximm + passoX*j) #+ int(passoX / 2)
             Y =passoY * i + int(passoY / 2)
             if i==0:
                 if j==0:
@@ -152,7 +155,10 @@ def StampaCalendario(d, L,H, Ximm, Yimm, giorniCal=[]):
                 strDay=giorniCal[day]
                 if "X" in strDay:
                     strDay=strDay[:-1]
-                    corrx=-10
+                    if len(strDay)==1:
+                        corrx=0
+                    else:
+                        corrx = -6
                     corry=-6
                     fnt = ImageFont.truetype('arial.ttf', 34)
                     d.text((X+corrx,Y+corry), strDay, font=fnt, fill=(255, 255, 255))
@@ -168,33 +174,19 @@ def StampaCalendario(d, L,H, Ximm, Yimm, giorniCal=[]):
                     d.text((X,Y), strDay, font=fnt, fill=(255, 255, 255))
                 day+=1
 
+        if i< len(appuntamentiList) and i<6:
+
+            X=int(Ximm + passoX*7) #+ int(passoX / 2)
+            Y =passoY * (i+1) + int(passoY / 2)
+            fnt = ImageFont.truetype('arial.ttf', 19)
+
+            d.text((X, Y), appuntamentiList[i], font=fnt, fill=(255, 255, 255))
+
+
+
     return d
 
-# def GenCalendario():
-#
-#     secondiAttuali=time.time()
-#     data = time.gmtime(secondiAttuali)
-#     meseAttuale=data.tm_mon
-#     secPrimoDelMese = int(secondiAttuali) - 3600*24*7*(data.tm_mday//7)- 3600*24*(data.tm_wday)
-#
-#     c=1
-#     giorni=0
-#
-#     genGiorni=''
-#     while c==True:
-#         # print(giorni,": ",sep='', end='')
-#         sec = secPrimoDelMese + giorni * 3600 * 24
-#         if giorni>25:
-#             data = time.gmtime(sec+3600 * 24)
-#             if data.tm_mon !=meseAttuale and data.tm_wday==0:
-#                 c=False
-#         data = time.gmtime(sec)
-#         if sec!= int(secondiAttuali):
-#             yield str(data.tm_mday)
-#         else:
-#             yield (str(data.tm_mday) + "X")
-#
-#         giorni+=1
+
 
 
 def CreaArrayCalendario():
@@ -230,7 +222,72 @@ def CreaArrayCalendario():
 
     return listGiorni
 
+def CreaListAppuntamenti(path):
+
+    path+='AppuntamentiFuturi.txt'
+    import datetime
+
+    printAll=False
+    with open(path, "r") as f:
+        x=''
+        # while x!= "Close":
+        x=f.read()
+        x=x.split('\n')
+        c=False
+        i=0
+
+        listaAppuntamenti=[]
+        listaDateAppuntamenti=[]
+        while c==False:
+            if x[i]=="Close":
+                break
+
+            # if printAll==True:
+            #     print(x[i])
+
+            AppNome = x[i].split(',')[0]
+
+            AppDataStringa= x[i].split(',')[1]
+
+            AppDataTimestamp=datetime.datetime.strptime(AppDataStringa, " %d/%m/%Y %H:%M").timestamp()-time.time()
+            if printAll == True:
+                print(f'Per i={i} il temppo in secondi è: {AppDataTimestamp}')
+            AppTempoStringa=''
+            if int(AppDataTimestamp//(86400*30))>0:
+                AppTempoStringa += str(int(AppDataTimestamp // (86400 * 30))) + "M "
+
+            if int(  (AppDataTimestamp%(86400*30))//86400)>0:
+                AppTempoStringa += str(int(  (AppDataTimestamp%(86400*30))//86400) ) +"g"
+
+            if (int(   ((AppDataTimestamp%(86400*30))%86400)//3600)  >0) and (int(AppDataTimestamp//(86400*30)))==0:
+                if (int(  (AppDataTimestamp%(86400*30))//86400)+int(AppDataTimestamp//(86400*30)))!=0:
+                    AppTempoStringa += ' '
+                AppTempoStringa +=  str(int(   ((AppDataTimestamp%(86400*30))%86400)//3600)    ) +"h"
+
+            if (int(   (((AppDataTimestamp%(86400*30))%86400)%3600)//60)   >0) and (int(  (AppDataTimestamp%(86400*30))//86400)+int(AppDataTimestamp//(86400*30)))==0:
+                AppTempoStringa += ' '+ str(int(   (((AppDataTimestamp%(86400*30))%86400)%3600)//60)     ) +"m"
+
+            if int(AppDataTimestamp)<0:
+                AppTempoStringa = "Passato"
+
+
+
+
+            if AppTempoStringa!= "Passato":
+                listaAppuntamenti.append(    AppNome+' -> '+ AppTempoStringa    )
+
+            if printAll == True:
+                print(f'Per i={i} la lista è: {listaAppuntamenti[i]}')
+            i+=1
+
+    if printAll==True:
+        print(listaAppuntamenti)
+
+    # listaAppuntamenti=2
+    return(listaAppuntamenti)
+
 
 
 if __name__ == '__main__':
-    CreaArrayCalendario()
+    # Test della funzione CreaListAppuntamenti
+    print(CreaListAppuntamenti(''))
