@@ -162,7 +162,8 @@ if __name__ == '__main__':
     PrintaByNik(edizione)
 
     IinfoSfondo = InfoSfondo( dimSfondo= (1920, 1080),
-                              luogo= "Roma Centro Borgo",
+                              #luogo= "Roma Centro Borgo",
+                              luogo= "Belmonte",
                               largColonna=550,
                               hCalend=250)
 
