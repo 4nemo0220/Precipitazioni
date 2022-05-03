@@ -30,6 +30,7 @@ from FunzioniAPI import APIOpenMeteo
 from FunzioniGrafici import CreaGrafico
 from FunzioniSovrapponiImmagini import SovrapponiMeteo
 from FunzioniOptimizzation import TimeOptimizzationClass
+from FunzioniFile import OttieniLuogoDaFile
 
 #PT0
 def PT0_scrIlMeteo():
@@ -163,7 +164,7 @@ if __name__ == '__main__':
 
     IinfoSfondo = InfoSfondo( dimSfondo= (1920, 1080),
                               #luogo= "Roma Centro Borgo",
-                              luogo= "Belmonte",
+                              luogo= OttieniLuogoDaFile(),
                               largColonna=550,
                               hCalend=250)
 

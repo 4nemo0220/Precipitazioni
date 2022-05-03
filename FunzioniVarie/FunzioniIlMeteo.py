@@ -202,8 +202,8 @@ def InfoMeteo(luogo="Roma Centro Borgo"):
     try:
         infoLoc = soup.find('div', class_='infoloc').text.replace('°', '').split("\n")[5].split(" ") #Lati = infoLoc[1] & Longi = infoLoc[3]
         stampa[3] = (infoLoc[1], infoLoc[3]) # ------> (Lati, Longi)
-        if luogo=="Roma Centro Borgo": stampa[3] = (41.9035, 12.48)
-        elif luogo == "Belmonte": stampa[3] = (42.321, 12.8845)
+        if luogo=="Gambero" or luogo == "Coronari": stampa[3] = (41.9035, 12.48)
+        elif luogo == "Belmonte" or "Convento": stampa[3] = (42.321, 12.8845)
         else: stampa[3] = (infoLoc[1], infoLoc[3]) # ------> (Lati, Longi)
         if __name__ == '__main__':
             print("stampa[3] ---> il touple con le info sulla pos è: -",stampa[3], "-", sep='')
